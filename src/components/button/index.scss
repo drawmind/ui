@@ -1,0 +1,49 @@
+@import "../../style/common.scss";
+
+$background-color      : #e9ecef;
+$hover-background-color: #d0d4da;
+$border                : none;
+
+button {
+    background-color: $background-color;
+    border          : $border;
+    line-height     : 1.2;
+    cursor          : pointer;
+
+    &:hover {
+        background-color: $hover-background-color;
+    }
+
+    &:disabled {
+        background-color: $background-color;
+        cursor: not-allowed;
+    }
+
+    &.xs-md-button {
+        padding      : 0 8px;
+        height       : 24px;
+        font-size    : $xs-font-size;
+        border-radius: $xs-border-radius;
+    }
+
+    &.sm-md-button {
+        padding      : 0 12px;
+        height       : 32px;
+        font-size    : $sm-font-size;
+        border-radius: $sm-border-radius;
+    }
+
+    &.md-md-button {
+        padding      : 0 16px;
+        height       : 40px;
+        font-size    : $md-font-size;
+        border-radius: $md-border-radius;
+    }
+
+    &.lg-md-button {
+        padding      : 0 24px;
+        height       : 48px;
+        font-size    : $lg-font-size;
+        border-radius: $lg-border-radius;
+    }
+}
