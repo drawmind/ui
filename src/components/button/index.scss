@@ -1,7 +1,7 @@
 @import "../../style/common.scss";
 
-$background-color      : #e9ecef;
-$hover-background-color: #d0d4da;
+$background-color      : $gray-one;
+$hover-background-color: $gray-two;
 $border                : none;
 
 button {

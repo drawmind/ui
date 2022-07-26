@@ -1,0 +1,65 @@
+@import "../../style/common.scss";
+
+$border                : 1px solid $gray-two;
+
+input {
+    border     : $border;
+    line-height: 1.2;
+
+    &:focus {
+        outline: 2px solid $orange-two;
+        border : 1px solid $orange-two;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
+    &.xs-md-input {
+        border-radius: $xs-border-radius;
+        height       : 22px;
+        &[type=number] {
+            &:focus,&:hover{
+                &::-webkit-inner-spin-button {
+                    height: 16px;
+                }
+            }
+        }
+    }
+
+    &.sm-md-input {
+        border-radius: $sm-border-radius;
+        height       : 32px;
+        &[type=number] {
+            &:focus,&:hover{
+                &::-webkit-inner-spin-button {
+                    height: 26px;
+                }
+            }
+        }
+    }
+
+    &.md-md-input {
+        border-radius: $md-border-radius;
+        height       : 40px;
+        &[type=number] {
+            &:focus,&:hover{
+                &::-webkit-inner-spin-button {
+                    height: 34px;
+                }
+            }
+        }
+    }
+
+    &.lg-md-input {
+        border-radius: $lg-border-radius;
+        height       : 48px;
+        &[type=number] {
+            &:focus,&:hover{
+                &::-webkit-inner-spin-button {
+                    height: 42px;
+                }
+            }
+        }
+    }
+}

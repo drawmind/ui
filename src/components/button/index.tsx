@@ -5,19 +5,16 @@ import "./index.scss";
 export interface ButtonProps extends CommonProps, SizeProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
     height?: number;
     width?: number;
-    disabled?: boolean;
-    style?: React.CSSProperties;
 }
 
 const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
     height,
     width,
-    style = {},
     children,
     className,
-    disabled = false,
     size = "md",
-    onClick
+    style={},
+    ...props
 }) => {
     const [btnClass, setBtnClass] = useState<string>();
 
@@ -31,14 +28,13 @@ const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
 
     return (
         <button
-            disabled={disabled}
             className={btnClass}
             style={{
                 ...style,
                 width,
                 height
             }}
-            onClick={onClick}
+            {...props}
         >
             {children}
         </button>
