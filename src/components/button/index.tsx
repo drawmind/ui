@@ -20,7 +20,6 @@ const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
     onClick
 }) => {
     const [btnClass, setBtnClass] = useState<string>();
-    const [clickFun, setClickFun] = useState<React.MouseEventHandler<HTMLButtonElement> | undefined>();
 
     useEffect(() => {
         if (className) {
@@ -29,14 +28,6 @@ const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
             setBtnClass(`${size}-${classPrefix}-button`);
         }
     }, [className, size]);
-
-    useEffect(() => {
-        if (disabled) {
-            setClickFun(undefined);
-        } else {
-            setClickFun(() => onClick);
-        }
-    }, [disabled, onClick]);
 
     return (
         <button
