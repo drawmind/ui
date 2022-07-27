@@ -1,3 +1,25 @@
+.example-title {
+    &::before {
+        content: "「";
+        color: orange;
+        margin-right: 10px;
+    }
+
+    &::after {
+        content: "」";
+        color: orange;
+        margin-left: 10px;
+    }
+}
+
+.example-body {
+    margin-left: 20px;
+}
+
+.example {
+    margin-top: 40px;
+}
+
 .button-example {
     .button-exmple-content {
         display: flex;
