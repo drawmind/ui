@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useState } from "react";
-import { CommonProps, SizeProps, classPrefix } from "../common";
+import { SizeProps, classPrefix } from "../common";
 import "./index.scss";
 
-export interface InputProps extends CommonProps, SizeProps, Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
+export interface InputProps extends SizeProps, Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
     htmlSize?: number;
 }
 

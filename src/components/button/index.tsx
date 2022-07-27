@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useState } from "react";
-import { CommonProps, SizeProps, classPrefix } from "../common";
+import { SizeProps, classPrefix } from "../common";
 import "./index.scss";
 
-export interface ButtonProps extends CommonProps, SizeProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends SizeProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
     height?: number;
     width?: number;
 }
