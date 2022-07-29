@@ -1,0 +1,90 @@
+@import "../../style/common.scss";
+
+.md-menu-panel {
+    display: flex;
+    width: max-content;
+    background-color: white;
+    box-shadow: $panel-box-shadow;
+
+    &.horizontal-md-menu-panel {
+        flex-direction: row;
+    }
+
+    &.vertical-md-menu-panel {
+        flex-direction: column;
+    }
+
+    .menu-group-title {
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    &.xs-md-menu-panel {
+        row-gap: 20px;
+        column-gap: 20px;
+        border-radius: $xs-panel-border-radius;
+        padding: $xs-panel-padding;
+
+        .md-menu-group-title {
+            font-size: $xs-font-size;
+        }
+    }
+
+    &.sm-md-menu-panel {
+        row-gap: 30px;
+        column-gap: 30px;
+        border-radius: $sm-panel-border-radius;
+        padding: $sm-panel-padding;
+
+        .md-menu-group-title {
+            font-size: $sm-font-size;
+        }
+    }
+
+    &.md-md-menu-panel {
+        row-gap: 40px;
+        column-gap: 40px;
+        border-radius: $md-panel-border-radius;
+        padding: $md-panel-padding;
+
+        .md-menu-group-title {
+            font-size: $md-font-size;
+        }
+    }
+
+    &.lg-md-menu-panel {
+        row-gap: 50px;
+        column-gap: 50px;
+        border-radius: $lg-panel-border-radius;
+        padding: $lg-panel-padding;
+
+        .md-menu-group-title {
+            font-size: $lg-font-size;
+        }
+    }
+
+    .md-menu-item {
+        line-height: 1.8;
+        cursor: pointer;
+
+        &:hover {
+            color: $orange-two;
+        }
+
+        &.xs-md-menu-item {
+            font-size: $xs-font-size;
+        }
+
+        &.sm-md-menu-item {
+            font-size: $sm-font-size;
+        }
+
+        &.md-md-menu-item {
+            font-size: $md-font-size;
+        }
+
+        &.lg-md-menu-item {
+            font-size: $lg-font-size;
+        }
+    }
+}

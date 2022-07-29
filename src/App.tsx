@@ -1,9 +1,10 @@
 import React from "react";
+import "./App.scss";
 import Button from "./components/button";
 import Input from "./components/input";
 import NumberInput from "./components/numberInput";
 import {H1, H2, H3, H4, H5, H6} from "./components/header";
-import "./App.scss";
+import MenuPanelExample from "./examples/menuPanelExample";
 
 const App = () => {
     return (
@@ -47,6 +48,7 @@ const App = () => {
                         <H6>Header Six</H6>
                     </div>
                 </div>
+                <MenuPanelExample />
             </div>
         </>
     );

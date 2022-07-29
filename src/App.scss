@@ -43,3 +43,14 @@
         align-items: center;
     }
 }
+
+.menu-panel-example {
+    .menu-panel-example-content {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: 40px;
+        column-gap: 40px;
+        margin-top: 50px;
+    }
+}
