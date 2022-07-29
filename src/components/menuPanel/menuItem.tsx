@@ -2,11 +2,11 @@ import React, { useState, useEffect, FC, useCallback } from "react";
 import { classPrefix, SizeProps} from "../common";
 
 interface MenuItemClickFun {
-    (key: React.Key, text: string): void;
+    (id: React.Key, text: string): void;
 }
 
-export interface MenuItemProps extends SizeProps, Omit<React.HTMLAttributes<HTMLDivElement>, "onClick"> {
-    key: React.Key;
+export interface MenuItemProps extends SizeProps, Omit<React.HTMLAttributes<HTMLDivElement>, "onClick" | "id"> {
+    id: React.Key;
     text: string;
     selected?: boolean;
     selectedColor?: string;
@@ -14,7 +14,7 @@ export interface MenuItemProps extends SizeProps, Omit<React.HTMLAttributes<HTML
 }
 
 const MenuItem: FC<MenuItemProps> = ({
-    key,
+    id,
     text,
     selected = false,
     selectedColor,
@@ -32,13 +32,13 @@ const MenuItem: FC<MenuItemProps> = ({
 
     const clickHandle = useCallback(() => {
         if (onClick) {
-            onClick(key, text);
+            onClick(id, text);
         }
     }, [onClick]);
 
     return (
         <div
-            key={key}
+            key={id}
             className={menuItemClass}
             {...props}
             style={style}

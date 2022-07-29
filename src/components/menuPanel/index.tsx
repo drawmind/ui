@@ -3,8 +3,8 @@ import { classPrefix, SizeProps} from "../common";
 import MenuItem, {MenuItemProps} from "./menuItem";
 import "./index.scss";
 
-export interface MenuPanelGroup extends React.HTMLAttributes<HTMLDivElement> {
-    key: string;
+export interface MenuPanelGroup extends Omit<React.HTMLAttributes<HTMLDivElement>, "id"> {
+    id: React.Key;
     title: string;
     items: Omit<MenuItemProps, "size">[];
 }
@@ -39,8 +39,8 @@ const MenuPanel: FC<MenuPanelProps> = ({
             {
                 groups.map((group) => (
                     <div
-                        key={group.key}
                         className={`menu-group ${classPrefix}-menu-group`}
+                        key={group.id}
                     >
                         <div className={`menu-group-title ${classPrefix}-menu-group-title`}>
                             {group.title}
@@ -48,7 +48,7 @@ const MenuPanel: FC<MenuPanelProps> = ({
                         <div className={`menu-group-content ${classPrefix}-menu-group-content`}>
                             {
                                 group.items.map(({
-                                    key,
+                                    id,
                                     text,
                                     selected,
                                     selectedColor,
@@ -56,7 +56,8 @@ const MenuPanel: FC<MenuPanelProps> = ({
                                     ...props
                                 }) => (
                                     <MenuItem
-                                        key={key}
+                                        key={id}
+                                        id={id}
                                         text={text}
                                         selected={selected}
                                         selectedColor={selectedColor}

@@ -40,4 +40,5 @@ module.exports = {
         port: 9000,
         open: true
     },
+    devtool: "source-map"
 };

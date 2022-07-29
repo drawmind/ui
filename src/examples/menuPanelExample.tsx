@@ -4,11 +4,11 @@ import MenuPanel from "../components/menuPanel";
 const MenuPanelExample = () => {
     const groups = [
         {
-            key: "JavaScript-Frame",
+            id: "JavaScript-Frame",
             title: "JavaScript Frame",
             items: [
                 {
-                    key: "ReactJs",
+                    id: "ReactJs",
                     text: "ReactJs",
                     selected: true,
                     selectedColor: "orange",
@@ -17,39 +17,39 @@ const MenuPanelExample = () => {
                     }
                 },
                 {
-                    key: "VueJs",
+                    id: "VueJs",
                     text: "VueJs"
                 },
                 {
-                    key: "AngularJs",
+                    id: "AngularJs",
                     text: "AngularJs"
                 },
                 {
-                    key: "ExpressJs",
+                    id: "ExpressJs",
                     text: "ExpressJs"
                 },
                 {
-                    key: "EggJs",
+                    id: "EggJs",
                     text: "EggJs"
                 }
             ]
         },
         {
-            key: "Web-UI-Frame",
+            id: "Web-UI-Frame",
             title: "Web-UI-Frame",
             items: [
                 {
-                    key: "Antd",
+                    id: "Antd",
                     text: "Antd",
                 },
                 {
-                    key: "ElementUI",
+                    id: "ElementUI",
                     selected: true,
                     selectedColor: "orange",
                     text: "ElementUI"
                 },
                 {
-                    key: "MaterialUI",
+                    id: "MaterialUI",
                     text: "MaterialUI"
                 }
             ]
