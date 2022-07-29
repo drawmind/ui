@@ -5,7 +5,7 @@ import "./index.scss";
 
 export interface MenuPanelGroup extends Omit<React.HTMLAttributes<HTMLDivElement>, "id"> {
     id: React.Key;
-    title: string;
+    title?: string;
     items: Omit<MenuItemProps, "size">[];
 }
 
@@ -42,9 +42,13 @@ const MenuPanel: FC<MenuPanelProps> = ({
                         className={`menu-group ${classPrefix}-menu-group`}
                         key={group.id}
                     >
-                        <div className={`menu-group-title ${classPrefix}-menu-group-title`}>
-                            {group.title}
-                        </div>
+                        {
+                            group.title ? (
+                                <div className={`menu-group-title ${classPrefix}-menu-group-title`}>
+                                    {group.title}
+                                </div>
+                            ) : null
+                        }
                         <div className={`menu-group-content ${classPrefix}-menu-group-content`}>
                             {
                                 group.items.map(({
