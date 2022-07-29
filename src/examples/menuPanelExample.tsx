@@ -60,16 +60,16 @@ const MenuPanelExample = () => {
         <div className="example menu-panel-example">
             <h2 className="example-title">MenuPanel</h2>
             <div className="example-body menu-panel-example-content">
-                <MenuPanel size="xs" groups={groups} />
-                <MenuPanel size="sm" groups={groups} />
-                <MenuPanel size="md" groups={groups} />
                 <MenuPanel size="lg" groups={groups} />
+                <MenuPanel size="md" groups={groups} />
+                <MenuPanel size="sm" groups={groups} />
+                <MenuPanel size="xs" groups={groups} />
             </div>
             <div className="example-body menu-panel-example-content">
-                <MenuPanel direction="vertical" size="xs" groups={groups} />
-                <MenuPanel direction="vertical" size="sm" groups={groups} />
-                <MenuPanel direction="vertical" size="md" groups={groups} />
                 <MenuPanel direction="vertical" size="lg" groups={groups} />
+                <MenuPanel direction="vertical" size="md" groups={groups} />
+                <MenuPanel direction="vertical" size="sm" groups={groups} />
+                <MenuPanel direction="vertical" size="xs" groups={groups} />
             </div>
         </div>
     )
