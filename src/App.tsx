@@ -5,6 +5,7 @@ import ButtonExample from "./examples/buttonExample";
 import InputExample from "./examples/inputExample";
 import HeaderExample from "./examples/headerExample";
 import NumberInputExample from "./examples/numberInputExample";
+import BaseDropdownMenuExample from "./examples/baseDropdownMenuExample";
 
 const App = () => {
     return (
@@ -15,6 +16,7 @@ const App = () => {
                 <NumberInputExample />
                 <HeaderExample />
                 <MenuPanelExample />
+                <BaseDropdownMenuExample />
             </div>
         </>
     );

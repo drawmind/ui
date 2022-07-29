@@ -1,10 +1,11 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, Ref, useEffect, useState } from "react";
 import { SizeProps, classPrefix } from "../common";
 import "./index.scss";
 
 export interface ButtonProps extends SizeProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
     height?: number;
     width?: number;
+    buttonRef?: Ref<HTMLButtonElement>;
 }
 
 const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
@@ -14,6 +15,7 @@ const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
     className,
     size = "md",
     style={},
+    buttonRef,
     ...props
 }) => {
     const [btnClass, setBtnClass] = useState<string>();
@@ -28,6 +30,7 @@ const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
 
     return (
         <button
+            ref={buttonRef}
             className={btnClass}
             style={{
                 ...style,
