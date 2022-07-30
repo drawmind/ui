@@ -15,7 +15,7 @@ interface MenuProps extends Pick<BaseDropDownMenuProps, "position"> {
 }
 
 const NULL_ITEM: MenuItem = {
-    text: "",
+    text: "select",
     value: "NULL_MENU_ITEM"
 };
 
