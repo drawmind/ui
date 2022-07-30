@@ -2,6 +2,7 @@ import React, { CSSProperties, FC, useEffect, useRef, useState } from "react";
 import Button from "../button";
 import "./baseDropdownMenu.scss";
 import { getElementOffsetToPageTop } from "../../util/domUtil";
+import DownArrow from "../../icons/downArrow";
 
 export interface BaseDropDownMenuProps {
     value: React.ReactNode;
@@ -16,13 +17,14 @@ export interface BaseDropDownMenuProps {
 const BaseDropDownMenu: FC<BaseDropDownMenuProps> = ({value, dropdown, position="bottom"}) => {
     const [showDropdown, setShowDropdown] = useState<boolean>(false);
     const [dropdownStyle, setDropDownStyle] = useState<CSSProperties>({});
+    const [mouseInButton, setMouseInBtn] = useState<boolean>(false);
     const menuButtonRef = useRef<HTMLButtonElement>(null);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const winClickHandle = (event: MouseEvent) => {
+        const winClickHandle = () => {
             setShowDropdown((show) => {
-                if (event.target === menuButtonRef.current) {
+                if (mouseInButton) {
                     return !show;
                 }
 
@@ -34,7 +36,7 @@ const BaseDropDownMenu: FC<BaseDropDownMenuProps> = ({value, dropdown, position=
         return () => {
             window.removeEventListener("click", winClickHandle);
         };
-    }, [menuButtonRef]);
+    }, [menuButtonRef, mouseInButton]);
 
     useEffect(() => {
         if (showDropdown) {
@@ -117,8 +119,11 @@ const BaseDropDownMenu: FC<BaseDropDownMenuProps> = ({value, dropdown, position=
             <Button
                 buttonRef={menuButtonRef}
                 className="base-drop-down-menu-button"
+                onMouseEnter={() => setMouseInBtn(true)}
+                onMouseLeave={() => setMouseInBtn(false)}
             >
                 {value}
+                <DownArrow />
             </Button>
             {
                 showDropdown ? (

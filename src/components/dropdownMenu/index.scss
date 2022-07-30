@@ -1,0 +1,10 @@
+@import "../../style/common.scss";
+
+.drop-down-menu {
+    .base-drop-down-menu {
+        .base-drop-down-menu-button {
+            background-color: white;
+            border: 2px solid $orange-two;
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import BaseDropDownMenu, { BaseDropDownMenuProps } from "./baseDropdownMenu";
 import MenuPanel from "../menuPanel";
+import "./index.scss";
 
 type MenuItemValue = string;
 interface MenuItem {
@@ -69,11 +70,13 @@ const DropdownMenu: FC<MenuProps> = ({
 
 
     return (
-        <BaseDropDownMenu
-            value={selected.text}
-            dropdown={dropdown}
-            position={position}
-        />
+        <div className="drop-down-menu">
+            <BaseDropDownMenu
+                value={selected.text}
+                dropdown={dropdown}
+                position={position}
+            />
+        </div>
     )
 };
 

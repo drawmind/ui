@@ -1,4 +1,11 @@
 .base-drop-down-menu {
+    .base-drop-down-menu-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 15px;
+    }
+
     .base-drop-down-content {
         position: absolute;
     }
