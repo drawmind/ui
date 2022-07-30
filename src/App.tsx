@@ -6,6 +6,7 @@ import InputExample from "./examples/inputExample";
 import HeaderExample from "./examples/headerExample";
 import NumberInputExample from "./examples/numberInputExample";
 import BaseDropdownMenuExample from "./examples/baseDropdownMenuExample";
+import DropdownMenuExample from "./examples/dropdownMenuExample";
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
                 <HeaderExample />
                 <MenuPanelExample />
                 <BaseDropdownMenuExample />
+                <DropdownMenuExample />
             </div>
         </>
     );
