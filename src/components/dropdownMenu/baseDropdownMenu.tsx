@@ -1,6 +1,7 @@
 import React, { CSSProperties, FC, useEffect, useRef, useState } from "react";
 import Button from "../button";
 import "./baseDropdownMenu.scss";
+import { getElementOffsetToPageTop } from "../../util/domUtil";
 
 export interface BaseDropDownMenuProps {
     value: React.ReactNode;
@@ -41,40 +42,67 @@ const BaseDropDownMenu: FC<BaseDropDownMenuProps> = ({value, dropdown, position=
             const dropdown = dropdownRef.current;
             if (menubutton && dropdown) {
                 const style: CSSProperties = {};
+                const {height, width} = menubutton.getBoundingClientRect();
+                const {top, left} = getElementOffsetToPageTop(menubutton);
 
                 switch (position) {
                     case "bottom":
-                        style.bottom = "-10px";
-                        style.left="50%";
-                        style.transform = "translate(-50%, 100%)";
+                        style.left = `${left + 0.5 * width}px`;
+                        style.top = `${top + height + 10}px`;
+                        style.transform = "translate(-50%, 0)";
                         break;
                     case "bottom-left":
-                        style.bottom = "-10px";
-                        style.left="0";
-                        style.transform = "translate(0, 100%)";
+                        style.top = `${top + height + 10}px`;
+                        style.left = `${left}px`;
                         break;
                     case "bottom-right":
-                        style.bottom = "-10px";
-                        style.right="0";
-                        style.transform = "translate(0, 100%)";
+                        style.top = `${top + height + 10}px`;
+                        style.left = `${left + width}px`;
+                        style.transform = "translate(-100%, 0)";
                         break;
                     case "left":
+                        style.top = `${top + 0.5 * height}px`;
+                        style.left = `${left - 10}px`;
+                        style.transform = "translate(-100%, -50%)";
                         break;
                     case "left-bottom":
+                        style.top = `${top}px`;
+                        style.left = `${left - 10}px`;
+                        style.transform = "translate(-100%, 0)";
                         break;
                     case "left-top":
+                        style.top = `${top + height}px`;
+                        style.left = `${left - 10}px`;
+                        style.transform = "translate(-100%, -100%)";
                         break;
                     case "right":
+                        style.top = `${top + 0.5 * height}px`;
+                        style.left = `${left + width + 10}px`;
+                        style.transform = "translate(0, -50%)";
                         break;
                     case "right-bottom":
+                        style.top = `${top}px`;
+                        style.left = `${left + width + 10}px`;
                         break;
                     case "right-top":
+                        style.top = `${top + height}px`;
+                        style.left = `${left + width + 10}px`;
+                        style.transform = "translate(0, -100%)";
                         break;
                     case "top":
+                        style.top = `${top - 10}px`;
+                        style.left = `${left + 0.5 * width}px`;
+                        style.transform = "translate(-50%, -100%)";
                         break;
                     case "top-left":
+                        style.top = `${top - 10}px`;
+                        style.left = `${left}px`;
+                        style.transform = "translate(0, -100%)";
                         break;
                     case "top-right":
+                        style.top = `${top - 10}px`;
+                        style.left = `${left + width}px`;
+                        style.transform = "translate(-100%, -100%)";
                         break;
                     default:
                         break;
