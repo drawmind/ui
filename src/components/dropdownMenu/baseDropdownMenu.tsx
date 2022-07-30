@@ -19,6 +19,23 @@ const BaseDropDownMenu: FC<BaseDropDownMenuProps> = ({value, dropdown, position=
     const dropdownRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        const winClickHandle = (event: MouseEvent) => {
+            setShowDropdown((show) => {
+                if (event.target === menuButtonRef.current) {
+                    return !show;
+                }
+
+                return false;
+            });
+        };
+        window.addEventListener("click", winClickHandle);
+
+        return () => {
+            window.removeEventListener("click", winClickHandle);
+        };
+    }, [menuButtonRef]);
+
+    useEffect(() => {
         if (showDropdown) {
             const menubutton = menuButtonRef.current;
             const dropdown = dropdownRef.current;
@@ -66,16 +83,11 @@ const BaseDropDownMenu: FC<BaseDropDownMenuProps> = ({value, dropdown, position=
             }
         }
     }, [position, showDropdown]);
-    
-    const buttonClick = () => {
-        setShowDropdown((show) => !show);
-    };
 
     return (
         <div className="base-drop-down-menu">
             <Button
                 buttonRef={menuButtonRef}
-                onClick={buttonClick}
                 className="base-drop-down-menu-button"
             >
                 {value}
