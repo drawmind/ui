@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: {index: path.resolve(__dirname, "src", "index.tsx")},
+    entry: {index: path.resolve(__dirname, "src", "App.tsx")},
     output: {
         path: path.resolve(__dirname, "build")
     },
@@ -40,5 +40,5 @@ module.exports = {
         port: 9000,
         open: true
     },
-    devtool: "source-map"
+    devtool: "inline-source-map"
 };

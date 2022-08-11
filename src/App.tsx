@@ -1,4 +1,5 @@
 import React from "react";
+import { createRoot } from "react-dom/client";
 import "./App.scss";
 import MenuPanelExample from "./examples/menuPanelExample";
 import ButtonExample from "./examples/buttonExample";
@@ -23,5 +24,9 @@ const App = () => {
         </>
     );
 };
+
+const container = document.getElementById("root");
+const root = createRoot(container!);
+root.render(<App />);
 
 export default App;
